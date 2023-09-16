@@ -19,7 +19,7 @@ class Sendsms extends Component
         $this->validate([
             'number'=> 'required|string',
             'sender'=> 'required|string',
-            'message'=> 'required|string|email|unique:users',
+            'message'=> 'required|string|',
         ]);
         $this->info='';
         $numbersArray = explode(',', $this->number);
@@ -27,11 +27,11 @@ class Sendsms extends Component
         // loop through each number and display it
        foreach($numbersArray as $numba){
             // $dumpedNumbers[]= $numba;
-            dd($numbersArray);
+            // dd($numbersArray);
         }
         // dump all the numbers at once after looping
         // dd($dumpedNumbers); 
-        dd($this->number, $this->sender, $this->message);
+        dd($this->numbeerArray, $this->sender, $this->message);
         // $client = new Client();
      
          $this->info='message sent successfully';
