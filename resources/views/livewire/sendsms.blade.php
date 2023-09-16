@@ -5,16 +5,25 @@
         <div class="mb-4">
             <label for="name" class="block text-gray-600 text-sm font-semibold">Recipient's Number</label>
             <input type="text"  name="number" wire:model="number" class="form-input w-full p-2 border rounded">
+            @error('number')
+                    <small class="text-red-500">{{$message}}</small>
+                @enderror
         </div>
 
         <div class="mb-4">
             <label for="" class="block text-gray-600 text-sm font-semibold">Sender</label>
             <input wire:model="sender" class="form-input w-full p-2 border rounded">
+            @error('sender')
+                    <small class="text-red-500">{{$message}}</small>
+                @enderror
         </div>
 
         <div class="mb-4">
             <label for="" class="block text-gray-600 text-sm font-semibold">Message</label>
             <input wire:model="message" class="form-input w-full p-2 border rounded">
+            @error('message')
+                    <small class="text-red-500">{{$message}}</small>
+                @enderror
         </div>
 
         <div class="mb-4">
