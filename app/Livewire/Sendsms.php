@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Mail\TextMessage;
 use Livewire\Component;
 
@@ -15,6 +16,11 @@ class Sendsms extends Component
         return view('livewire.sendsms');
     }
     public function sendSms(){
+        $this->validate([
+            'number'=> 'required|string',
+            'sender'=> 'required|string',
+            'message'=> 'required|string|email|unique:users',
+        ]);
         $this->info='';
         $numbersArray = explode(',', $this->number);
         $dumpedNumbers =[];
