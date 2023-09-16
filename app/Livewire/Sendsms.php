@@ -31,7 +31,7 @@ class Sendsms extends Component
         }
         // dump all the numbers at once after looping
         // dd($dumpedNumbers); 
-        dd($this->numbersArray, $this->sender, $this->message);
+        dd($this->number, $this->sender, $this->message);
         // $client = new Client();
      
          $this->info='message sent successfully';
