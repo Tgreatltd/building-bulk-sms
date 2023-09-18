@@ -22,7 +22,6 @@ class Sendsms extends Component
             'message'=> 'required|string|',
         ]);
         $this->info='';
-        $this->info='';
         $numbersArray = explode(',', $this->number);
         $dumpedNumbers =[];
         // loop through each number and display it
