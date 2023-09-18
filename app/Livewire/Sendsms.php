@@ -23,7 +23,6 @@ class Sendsms extends Component
         ]);
         $this->info='';
         $numbersArray = explode(',', $this->number);
-        $numbersArray = explode(',', $this->number);
         $dumpedNumbers =[];
         // loop through each number and display it
        foreach($numbersArray as $numba){
