@@ -37,7 +37,7 @@ class sendEmail extends Mailable
             // subject: 'Send Email',
             from: new Address('olamoyeguntimothy@gmail.com', 'SMSBULK'),
             // subject: 'Class Trial',
-            subject: 'Class Trial',
+            subject: $this->subject,
         );
     }
 
