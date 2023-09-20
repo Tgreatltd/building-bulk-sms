@@ -17,9 +17,13 @@ class sendEmail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+
+     public $subject, $details;
+
+    public function __construct($data)
     {
-        //
+        $this->subject = $data['subject'];
+        $this->details = $data['message'];
     }
 
     /**
@@ -32,6 +36,8 @@ class sendEmail extends Mailable
         return new Envelope(
             // subject: 'Send Email',
             from: new Address('olamoyeguntimothy@gmail.com', 'SMSBULK'),
+            // subject: 'Class Trial',
+            subject: 'Class Trial',
         );
     }
 

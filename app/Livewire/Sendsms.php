@@ -2,9 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Jobs\sendEmailJob;
+use App\Mail\sendEmail;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Mail\TextMessage;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class Sendsms extends Component
@@ -16,14 +19,21 @@ class Sendsms extends Component
         return view('livewire.sendsms');
     }
     public function sendSms(){
+        $this->info='';
+        $data = ['subject'=>'Hello Testing', 'message'=> 'Message Sent for 123'];
+        dispatch(new sendEmailJob($data));
+        // Mail::to('olamoyeguntimothy@gmail.com')->send(new sendEmail());
+        dd('Sent');
+        return;
         $this->validate([
             'number'=> 'required|string',
             'sender'=> 'required|string',
             'message'=> 'required|string|',
         ]);
-        $this->info='';
+        
         $numbersArray = explode(',', $this->number);
         $dumpedNumbers =[];
+        
         // loop through each number and display it
        foreach($numbersArray as $numba){
             // $dumpedNumbers[]= $numba;
