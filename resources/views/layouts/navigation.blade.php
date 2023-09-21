@@ -14,7 +14,15 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                        {{-- <h3 class=" m-20">#{{Auth::user()->wallet}}</h3>  --}}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         <h3 class=" m-20">#{{Auth::user()->wallet}}</h3> 
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('sendsms')" :active="request()->routeIs('sendsms')">
+                        {{ __('SendSms') }}
                     </x-nav-link>
                 </div>
             </div>
