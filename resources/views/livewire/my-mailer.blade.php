@@ -1,5 +1,5 @@
 <div class="container mx-auto mt-8">
-    <h1 class="text-3xl m-2">Send Bulk SMS !! {{$email}}</h1>
+    <h1 class="text-3xl m-2">SEND EMAIL !! {{$email}}</h1>
     <p class="text-3xl m-2">{{$info}}</p>
     <form wire:submit.prevent="sendSms">
         <div class="mb-4">
