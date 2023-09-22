@@ -13,18 +13,17 @@ class MyMailer extends Component
         return view('livewire.my-mailer');
     }
 
-    public function sendMail(){
-        $this->info='';
+    public function sendMail()
+    {
+        $this->info = '';
         $this->validate([
-            'email'=> 'required|string',
-            'subject'=> 'required|string',
-            'message'=> 'required|string|',
+            'email' => 'required|string',
+            'subject' => 'required|string',
+            'message' => 'required|string|',
         ]);
-        $data = ['subject'=>$this->subject, 'message'=> $this->message];
+        $data = ['subject' => $this->subject, 'message' => $this->message, 'email' => $this->email];
         dispatch(new sendEmailJob($data));
         // Mail::to('olamoyeguntimothy@gmail.com')->send(new sendEmail());
         dd('Sent');
-       
-       
     }
 }
