@@ -25,9 +25,10 @@ Route::get('/dashboard', function () {
 Route::get('/sendsms', function () {
     return view('sendmessage');
 })->middleware(['auth', 'verified'])->name('sendsms');
+
 Route::get('/sendmail', function () {
-    return view('');
-})->middleware(['auth', 'verified'])->name('sendsms');
+    return view('sendmailmessage');
+})->middleware(['auth', 'verified'])->name('sendmail');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

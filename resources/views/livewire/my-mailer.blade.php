@@ -1,11 +1,11 @@
 <div class="container mx-auto mt-8">
-    <h1 class="text-3xl m-2">Send Bulk SMS !! {{$number}}</h1>
+    <h1 class="text-3xl m-2">Send Bulk SMS !! {{$email}}</h1>
     <p class="text-3xl m-2">{{$info}}</p>
     <form wire:submit.prevent="sendSms">
         <div class="mb-4">
-            <label for="name" class="block text-gray-600 text-sm font-semibold">Recipient's Number</label>
+            <label for="name" class="block text-gray-600 text-sm font-semibold">Recipient's Email</label>
             <input type="text"  wire:model="email" class="form-input w-full p-2 border rounded">
-            @error('number')
+            @error('email')
                     <small class="text-red-500">{{$message}}</small>
                 @enderror
         </div>
