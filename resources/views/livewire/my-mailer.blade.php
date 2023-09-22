@@ -1,13 +1,35 @@
-<div>
-    {{-- In work, do what you enjoy. --}}
-    <div class="container mx-auto p-4">
-        <div class="bg-white p-6 rounded-lg shadow">
-            {{-- <h1 class="text-2xl font-semibold mb-4">Hello, {{Auth::user()->name}}</h1> --}}
-            <h1 class="text-2xl font-semibold mb-4">Hello</h1>
-            <p class="text-gray-700">Thank you for signing to our website</p>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded mt-4">
-                Click Me
+<div class="container mx-auto mt-8">
+    <h1 class="text-3xl m-2">Send Bulk SMS !! {{$number}}</h1>
+    <p class="text-3xl m-2">{{$info}}</p>
+    <form wire:submit.prevent="sendSms">
+        <div class="mb-4">
+            <label for="name" class="block text-gray-600 text-sm font-semibold">Recipient's Number</label>
+            <input type="text"  wire:model="email" class="form-input w-full p-2 border rounded">
+            @error('number')
+                    <small class="text-red-500">{{$message}}</small>
+                @enderror
+        </div>
+
+        <div class="mb-4">
+            <label for="" class="block text-gray-600 text-sm font-semibold">Sender</label>
+            <input wire:model="sender" class="form-input w-full p-2 border rounded">
+            @error('sender')
+                    <small class="text-red-500">{{$message}}</small>
+                @enderror
+        </div>
+
+        <div class="mb-4">
+            <label for="" class="block text-gray-600 text-sm font-semibold">Message</label>
+            <input wire:model="message" class="form-input w-full p-2 border rounded">
+            @error('message')
+                    <small class="text-red-500">{{$message}}</small>
+                @enderror
+        </div>
+
+        <div class="mb-4">
+            <div wire:target="sendEmail" wire:loading wire:attribute.class="block" class="hidden">sending sms......</div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
+                Submit
             </button>
         </div>
-    </div>
-</div>
+    </form>
