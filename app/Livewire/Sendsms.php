@@ -20,6 +20,7 @@ class Sendsms extends Component
         return view('livewire.sendsms');
         return view('livewire.sendsms');
         return view('livewire.sendsms');
+        return view('livewire.sendsms');
     }
     public function sendSms(){
         $this->info='';
