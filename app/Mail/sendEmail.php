@@ -24,6 +24,7 @@ class sendEmail extends Mailable
     {
         $this->subject = $data['subject'];
         $this->details = $data['message'];
+        $this->email = $data['email'];
         // $this->email = $data['email'];
     }
 
