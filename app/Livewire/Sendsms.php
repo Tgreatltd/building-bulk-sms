@@ -20,11 +20,10 @@ class Sendsms extends Component
     }
     public function sendSms(){
         $this->info='';
-        $data = ['subject'=>'Hello Testing', 'message'=> 'Message Sent for 123'];
-        dispatch(new sendEmailJob($data));
+        // $data = ['subject'=>'Hello Testing', 'message'=> 'Message Sent for 123'];
+        // dispatch(new sendEmailJob($data));
         // Mail::to('olamoyeguntimothy@gmail.com')->send(new sendEmail());
-        dd('Sent');
-        return;
+        // dd('Sent');
         $this->validate([
             'number'=> 'required|string',
             'sender'=> 'required|string',
