@@ -17,7 +17,6 @@ class Sendsms extends Component
     public function render()
     {
         return view('livewire.sendsms');
-        return view('livewire.sendsms');
     }
     public function sendSms(){
         $this->info='';
