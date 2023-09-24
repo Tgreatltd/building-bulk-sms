@@ -28,7 +28,6 @@ class Sendsms extends Component
             'number'=> 'required|string',
             'sender'=> 'required|string',
             'message'=> 'required|string|',
-            'message'=> 'required|string|',
         ]);
         
         $numbersArray = explode(',', $this->number);
