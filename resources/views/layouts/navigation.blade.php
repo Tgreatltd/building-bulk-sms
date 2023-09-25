@@ -25,7 +25,7 @@
                         {{ __('SendSms') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('sendsms')" :active="request()->routeIs('sendsms')">
+                    <x-nav-link :href="route('phonebook')" :active="request()->routeIs('phonebook')">
                         {{ __('PhoneBook') }}
                     </x-nav-link>
 

@@ -26,6 +26,10 @@ Route::get('/sendsms', function () {
     return view('sendmessage');
 })->middleware(['auth', 'verified'])->name('sendsms');
 
+Route::get('/phonebook', function () {
+    return view('phonebook');
+})->middleware(['auth', 'verified'])->name('phonebook');
+
 Route::get('/sendmail', function () {
     return view('sendmailmessage');
 })->middleware(['auth', 'verified'])->name('sendmail');

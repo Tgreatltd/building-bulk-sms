@@ -8,6 +8,6 @@ class MyPhonebook extends Component
 {
     public function render()
     {
-        return view('livewire.my-phonebook');
+        return view('livewire.myphonebook');
     }
 }
