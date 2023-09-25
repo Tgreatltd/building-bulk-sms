@@ -2,7 +2,7 @@
     {{-- If your happiness depends on money, you will never be happy with yourself. --}}
     <div class="container mx-auto mt-8">
         <h2 class="text-2xl font-semibold mb-4">Form</h2>
-        <form wire:submit.prevent="sendSms"> <!-- Replace 'your-route-name' with the actual route for form submission -->
+        <form wire:submit.prevent="saveContcat"> <!-- Replace 'your-route-name' with the actual route for form submission -->
             @csrf <!-- Add a CSRF token field for security -->
             <div class="mb-4">
                 <label for="name" class="block text-gray-600">Name:</label>
