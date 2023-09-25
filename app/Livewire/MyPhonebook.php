@@ -18,8 +18,7 @@ class MyPhonebook extends Component
         // dd($this->number);
         $data = $this->validate([
             'number'=> 'required|string',
-            'sender'=> 'required|string',
-            'message'=> 'required|string|',
+            'name'=> 'required|string',
         ]);
         Community::create($data);
     }
