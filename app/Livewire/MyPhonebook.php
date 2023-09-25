@@ -18,7 +18,7 @@ class MyPhonebook extends Component
         // dd($this->number);
           $this->validate([
             'number'=> 'required|string',
-            'name'=> 'required|string',
+            'name'=> 'required|string|unique:communities,name',
         ]);
         Community::create(
             [ 
