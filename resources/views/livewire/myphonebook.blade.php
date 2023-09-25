@@ -1,8 +1,8 @@
 <div>
     {{-- If your happiness depends on money, you will never be happy with yourself. --}}
-    <div class="max-w-md mx-auto bg-white rounded p-6 shadow-md">
+    <div class="container mx-auto mt-8">
         <h2 class="text-2xl font-semibold mb-4">Form</h2>
-        <form method="POST" action="{{ route('your-route-name') }}"> <!-- Replace 'your-route-name' with the actual route for form submission -->
+        <form method="POST" action=""> <!-- Replace 'your-route-name' with the actual route for form submission -->
             @csrf <!-- Add a CSRF token field for security -->
             <div class="mb-4">
                 <label for="name" class="block text-gray-600">Name:</label>
