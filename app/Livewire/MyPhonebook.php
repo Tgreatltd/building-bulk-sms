@@ -13,6 +13,7 @@ class MyPhonebook extends Component
     }
 
     public function saveContact(){
+        
         dd($this->number);
     }
 }
