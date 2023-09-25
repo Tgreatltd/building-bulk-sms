@@ -2,11 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Models\Community;
 use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name;
+    public $number, $name, $data;
     public function render()
     {
         return view('livewire.myphonebook');
@@ -14,6 +15,12 @@ class MyPhonebook extends Component
 
     public function saveContact(){
         
-        dd($this->number);
+        // dd($this->number);
+        $data = $this->validate([
+            'number'=> 'required|string',
+            'sender'=> 'required|string',
+            'message'=> 'required|string|',
+        ]);
+        Community::create($data);
     }
 }

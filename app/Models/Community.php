@@ -11,7 +11,7 @@ class Community extends Model
 
     protected $fillable = [
         'name',
-        'numbers',
+        'number',
     ];
 
 }
