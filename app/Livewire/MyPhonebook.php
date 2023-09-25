@@ -16,10 +16,16 @@ class MyPhonebook extends Component
     public function saveContact(){
         
         // dd($this->number);
-        $data = $this->validate([
+          $this->validate([
             'number'=> 'required|string',
             'name'=> 'required|string',
         ]);
-        Community::create($data);
+        Community::create(
+            [ 
+            
+            'name'=>$this->name,
+            'number'=>$this->number,
+            ]
+        );
     }
 }

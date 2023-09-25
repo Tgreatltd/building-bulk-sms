@@ -7,10 +7,16 @@
             <div class="mb-4">
                 <label for="name" class="block text-gray-600">Name:</label>
                 <input type="text" id="name"  wire:model="name" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400">
+                @error('name')
+                   <small class="text-red-500">{{$message}}</small> 
+                @enderror
             </div>
             <div class="mb-4">
                 <label for="number" class="block text-gray-600">Number:</label>
                 <input type="text" id="number"  wire:model="number" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400 py-20">
+                @error('number')
+                  <small class="text-red-500">{{$message}}</small>  
+                @enderror
             </div>
             <div class="text-center">
                 <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700">Save</button>
