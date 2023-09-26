@@ -25,9 +25,7 @@
     </div>
 
     
-        {{-- @foreach ($user as $usa)
-            <div>{{$usa->name}}</div>
-        @endforeach --}}
+        
 
 
         <div>
@@ -42,10 +40,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($user as $usa)
+                     <div>{{$usa->name}}</div>
+                   @endforeach
                     <tr>
-                        <td class="px-4 py-2">Row 1, Column 1</td>
-                        <td class="px-4 py-2">Row 1, Column 2</td>
-                        <td class="px-4 py-2">Row 1, Column 3</td>
+                        <td class="px-4 py-2">{{$usa->id}}</td>
+                        <td class="px-4 py-2">{{$usa->name}}</td>
+                        <td class="px-4 py-2">{{$usa->number}}</td>
                         <td class="px-4 py-2">Row 1, Column 4</td>
                     </tr>
                 </tbody>
