@@ -13,7 +13,7 @@ class MyPhonebook extends Component
         $users = Community::all();
 
         return view('livewire.myphonebook', [
-         'users'=>$users,   
+         'user'=>$users,   
         ]);
     }
 

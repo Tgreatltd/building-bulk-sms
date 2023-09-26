@@ -25,7 +25,7 @@
     </div>
 
     
-        @foreach ($users as $usa)
+        @foreach ($user as $usa)
             <div>{{$usa->name}}</div>
         @endforeach
 
