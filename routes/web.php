@@ -32,7 +32,7 @@ Route::get('/phonebook', function () {
 })->middleware(['auth', 'verified'])->name('phonebook');
 
 Route::get('/edit/{id}', function ($id) {
-    return view('editphonebooks',['user'=>Community::find($id)]);
+    return view('editphonebooks',['used'=>Community::find($id)]);
 })->middleware(['auth', 'verified'])->name('edit');
 
 
