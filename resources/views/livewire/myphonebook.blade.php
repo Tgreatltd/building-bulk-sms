@@ -41,14 +41,16 @@
                 </thead>
                 <tbody>
                     @foreach ($user as $usa)
-                     <div>{{$usa->name}}</div>
-                   @endforeach
                     <tr>
                         <td class="px-4 py-2">{{$usa->id}}</td>
                         <td class="px-4 py-2">{{$usa->name}}</td>
                         <td class="px-4 py-2">{{$usa->number}}</td>
-                        <td class="px-4 py-2">Row 1, Column 4</td>
+                        <td class="px-4 py-2">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700">EDIT</button>
+        
+                        </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
 
