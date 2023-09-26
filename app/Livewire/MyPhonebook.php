@@ -33,10 +33,4 @@ class MyPhonebook extends Component
         );
 
      }
-// public function editContact($id){
-//     $this->id=$id;
-//     $this->used = Community::find($id);
-
-//     return view('editphonebooks');
-// }
 }
