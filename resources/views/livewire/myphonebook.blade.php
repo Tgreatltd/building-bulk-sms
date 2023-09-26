@@ -29,7 +29,7 @@
 
 
         <div>
-            <h2 class="text-2xl font-semibold mb-4">Table Example</h2>
+            <h2 class="text-2xl font-semibold mb-4">PHONEBOOK LIST</h2>
             <table class="min-w-full">
                 <thead>
                     <tr>
