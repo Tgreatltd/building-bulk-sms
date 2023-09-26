@@ -30,6 +30,11 @@ Route::get('/phonebook', function () {
     return view('phonebook');
 })->middleware(['auth', 'verified'])->name('phonebook');
 
+Route::get('/edit', function () {
+    return view('editphonebook');
+})->middleware(['auth', 'verified'])->name('edit');
+
+
 Route::get('/sendmail', function () {
     return view('sendmailmessage');
 })->middleware(['auth', 'verified'])->name('sendmail');

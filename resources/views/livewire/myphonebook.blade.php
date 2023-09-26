@@ -46,7 +46,8 @@
                         <td class="px-4 py-2">{{$usa->name}}</td>
                         <td class="px-4 py-2">{{$usa->number}}</td>
                         <td class="px-4 py-2">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700">EDIT</button>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded 
+             active:bg-blue-700"><a href="">EDIT</a></button>
         
                         </td>
                     </tr>
