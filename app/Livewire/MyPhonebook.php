@@ -10,7 +10,7 @@ class MyPhonebook extends Component
     public $number, $name, $data, $users;
     public function render()
     {
-        return view('livewire.myphonebook');
+        return view('livewire.myphonebook',['users'=>Community::all()]);
     }
 
     public function saveContact(){
