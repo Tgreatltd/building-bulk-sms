@@ -25,8 +25,30 @@
     </div>
 
     
-        @foreach ($user as $usa)
+        {{-- @foreach ($user as $usa)
             <div>{{$usa->name}}</div>
-        @endforeach
+        @endforeach --}}
+
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-4">Table Example</h2>
+            <table class="min-w-full">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2">ID</th>
+                        <th class="px-4 py-2">NAME</th>
+                        <th class="px-4 py-2">NUMBERS</th>
+                        <th class="px-4 py-2">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="px-4 py-2">Row 1, Column 1</td>
+                        <td class="px-4 py-2">Row 1, Column 2</td>
+                        <td class="px-4 py-2">Row 1, Column 3</td>
+                        <td class="px-4 py-2">Row 1, Column 4</td>
+                    </tr>
+                </tbody>
+            </table>
 
 </div>
