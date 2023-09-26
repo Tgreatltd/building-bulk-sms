@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name, $data;
+    public $number, $name, $data, $users;
     public function render()
     {
         return view('livewire.myphonebook');
@@ -27,5 +27,7 @@ class MyPhonebook extends Component
             'number'=>$this->number,
             ]
         );
+
+      
     }
 }

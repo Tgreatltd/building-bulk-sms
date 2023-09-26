@@ -23,4 +23,10 @@
             </div>
         </form>
     </div>
+
+    
+        @foreach ($users as $usa)
+            <div>{{$usa->name}}</div>
+        @endforeach
+
 </div>
