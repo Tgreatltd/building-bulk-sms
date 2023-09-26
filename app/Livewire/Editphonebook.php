@@ -7,9 +7,9 @@ use Livewire\Component;
 
 class Editphonebook extends Component
 {
-    public $id;
+public $id;
     public function render($id)
     {
-        return view('livewire.editphonebook', ['user'=>Community::find($id)]);
+        return view('livewire.editphonebook',['used'=>Community::find($id)]);
     }
 }

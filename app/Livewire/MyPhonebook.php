@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name, $data, $users;
+    public $number, $name, $data, $users, $used, $id;
     public function render()
     {
         $users = Community::all();
@@ -33,7 +33,10 @@ class MyPhonebook extends Component
         );
 
      }
-public function editContact(){
-    
-}
+// public function editContact($id){
+//     $this->id=$id;
+//     $this->used = Community::find($id);
+
+//     return view('editphonebooks');
+// }
 }
