@@ -5,11 +5,17 @@ namespace App\Livewire;
 use App\Models\Community;
 use Livewire\Component;
 
+
 class Editphonebook extends Component
 {
-public $id;
-    public function render($id)
+public $used,  $communityId;
+
+public function mount($id){
+    $this->communityId=$id;
+    $this->used = Community::find($id);
+}
+    public function render()
     {
-        return view('livewire.editphonebook',['used'=>Community::find($id)]);
+        return view('livewire.editphonebook');
     }
 }
