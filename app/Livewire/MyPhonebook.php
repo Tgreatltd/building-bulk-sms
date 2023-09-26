@@ -33,5 +33,7 @@ class MyPhonebook extends Component
         );
 
      }
-
+public function editContact(){
+    
+}
 }
