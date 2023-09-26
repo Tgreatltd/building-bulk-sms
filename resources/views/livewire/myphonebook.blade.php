@@ -30,7 +30,7 @@
 
         <div>
             <h2 class="text-2xl font-semibold mb-4">PHONEBOOK LIST</h2>
-            <table class="min-w-full">
+            <table class="min-w-full table table-striped">
                 <thead>
                     <tr>
                         <th class="px-4 py-2">ID</th>
