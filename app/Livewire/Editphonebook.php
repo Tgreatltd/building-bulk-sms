@@ -8,12 +8,12 @@ use Livewire\Component;
 
 class Editphonebook extends Component
 {
-public $used, $communityId, $id;
+public $used, $communityId, $id, $data;
 
 
 public function mount($id){
     $this->communityId=$id;
-    $this->used = Community::find($id);
+ $this->used = Community::find($id);
    ;
     
 }

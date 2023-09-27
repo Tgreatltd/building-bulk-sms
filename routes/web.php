@@ -31,9 +31,9 @@ Route::get('/phonebook', function () {
     return view('phonebook');
 })->middleware(['auth', 'verified'])->name('phonebook');
 
-Route::get('/edit/{id}', function () {
+Route::get('/editContact/{id}', function () {
     return view('editphonebooks');
-})->middleware(['auth', 'verified'])->name('edit');
+})->middleware(['auth', 'verified'])->name('editContact');
 
 
 Route::get('/sendmail', function () {

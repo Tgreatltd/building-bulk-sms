@@ -46,7 +46,7 @@
                         <td class="px-4 py-2">{{$usa->name}}</td>
                         <td class="px-4 py-2">{{$usa->number}}</td>
                         <td class="px-4 py-2">
-            <form action="{{url('edit/'.$usa->id)}}" method="GET">
+            <form action="{{url('editContact/'.$usa->id)}}" method="GET">
                 <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded 
              active:bg-blue-700">Edit</button>
             </form>
