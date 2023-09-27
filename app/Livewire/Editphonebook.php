@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Editphonebook extends Component
 {
-public $used, $communityId;
+public $used, $communityId, $id;
 
 
 public function mount($id){
