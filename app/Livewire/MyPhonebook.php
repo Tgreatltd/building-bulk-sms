@@ -7,15 +7,7 @@ use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name, $data, $users, $used, $id;
-    public function render()
-    {
-        $users = Community::all();
-
-        return view('livewire.myphonebook', [
-         'user'=>$users,   
-        ]);
-    }
+    public $number, $name, $data, $user, $used, $seeId;
 
     public function saveContact(){
         
@@ -33,4 +25,23 @@ class MyPhonebook extends Component
         );
 
      }
+
+    
+     public function mount(){
+        $this->user = Community::all();
+     }
+
+     public function selectUser($id){
+        $data=['name'=>$this->name, 'number'=>$this->number, 'id'=>$this->id];
+        $this->data = Community::find($id);
+       
+     }
+
+
+    public function render($id)
+    {
+    
+        return view('livewire.myphonebook');
+    }
+
 }

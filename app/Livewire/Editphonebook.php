@@ -8,13 +8,13 @@ use Livewire\Component;
 
 class Editphonebook extends Component
 {
-public $used, $communityId;
+ public $used, $seeId;
+    public function mount($id){
+        $this->seeId=$id;
+     $this->used=Community::find($id);
+     
+    }
 
-
-public function mount($id){
- $this->used = Community::find($id);
- $this->$id=$id;
-}
     public function render()
     {
 
