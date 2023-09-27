@@ -18,5 +18,6 @@ public function mount($id){
     public function render()
     {
         return view('livewire.editphonebook');
+        return view('livewire.editphonebook');
     }
 }
