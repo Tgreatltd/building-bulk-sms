@@ -12,10 +12,8 @@ public $used, $communityId;
 
 
 public function mount($id){
-    $this->communityId=$id;
  $this->used = Community::find($id);
-   ;
-    
+ $this->$id=$id;
 }
     public function render()
     {
