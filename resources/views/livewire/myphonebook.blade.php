@@ -1,5 +1,5 @@
 <div>
-    {{-- If your happiness depends on money, you will never be happy with yourself. --}}
+    {{-- If your happiness depends on money, you will never be happy with yourself.
     <div class="container mx-auto mt-8 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
         <h2 class="text-2xl font-semibold mb-4">Form</h2>
         <form wire:submit.prevent="saveContact"> <!-- Replace 'your-route-name' with the actual route for form submission -->
@@ -56,5 +56,53 @@
                     </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table> --}}
+
+   <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
+    <form wire:submit.prevent="save">
+        <div class="mb-4">
+            <label for="name" class="block text-gray-600 text-sm font-semibold">Name</label>
+            <input wire:model="name" type="text" id="name" name="name" class="form-input">
+            @error('name')
+                <small class="text-red-500">{{$message}}</small>
+            @enderror
+        </div>
+        <div class="mb-4">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">Save</button>
+        </div>
+    </form>
+   </div>
+
+
+   <div class="">
+    <h2 class="text-2xl font-semibold mb-4">PHONEBOOK LIST</h2>
+    <table class="min-w-full table">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">ID</th>
+                <th class="px-4 py-2">NAME</th>
+                <th class="px-4 py-2">USER_ID</th>
+                <th class="px-4 py-2">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($user as $usa)
+            <tr>
+                <td class="px-4 py-2">{{$usa->id}}</td>
+                <td class="px-4 py-2">{{$usa->name}}</td>
+                <td class="px-4 py-2">{{$usa->user_id}}</td>
+                <td class="px-4 py-2">
+                    <div class="mb-4">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">EDIT</button>
+                    </div>
+                    <div class="mb-4">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">DELETE</button>
+                    </div>
+                </td>
+        
+            </tr>
+            @endforeach
+        </tbody>
+    </table> 
+
 </div>
