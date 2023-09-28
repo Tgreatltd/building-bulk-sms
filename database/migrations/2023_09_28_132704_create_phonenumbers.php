@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('phonenumbers', function (Blueprint $table) {
             $table->id();
+            $table->string('phoneNumber');
+            $table->unsignedBigInteger('phone_id');
             $table->timestamps();
         });
     }
