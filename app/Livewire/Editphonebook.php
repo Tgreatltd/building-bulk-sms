@@ -12,7 +12,8 @@ class Editphonebook extends Component
     public function mount($id){
         $this->seeId=$id;
      $this->used=Community::find($id);
-     
+     $this->used=Community::find($id);
+      
     }
 
     public function render()
