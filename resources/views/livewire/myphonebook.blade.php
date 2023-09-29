@@ -60,7 +60,7 @@
     @if (session()->has('success'))
         <h1>{{session()->get('success')}}</h1>
     @endif
-    <form wire:submit.prevent="" action="" method="POST" class="max-w-md mx-auto">
+    <form wire:submit.prevent="saveNumber" action="" method="POST" class="max-w-md mx-auto">
         @csrf
         
         <div class="mb-4">
