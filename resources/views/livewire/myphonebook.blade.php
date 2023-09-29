@@ -70,12 +70,11 @@
         </div>
 
         
-        
         <div class="mb-4">
             <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
-            
-
-            <div>
+            <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
+            value="{{$ids}}">
+            {{-- <div>
                 @if ($contacts)
                 <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
                 value="{{$contacts->id}}">
@@ -83,7 +82,7 @@
                 @else
                     <p>Contact not found</p>
                 @endif
-            </div>
+            </div> --}}
         </div>
 
         <div class="mb-4">
