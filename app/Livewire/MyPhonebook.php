@@ -44,6 +44,8 @@ public function saveNumber($id){
         'phone_id'=>$this->phonebookId,
         ]
     );
+ } else{
+    echo 'invalid';
  }
 
 session()->flash('success', 'Your Number have been saved successfully');
