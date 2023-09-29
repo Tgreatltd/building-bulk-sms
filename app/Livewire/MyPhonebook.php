@@ -29,12 +29,12 @@ class MyPhonebook extends Component
         session()->flash('success','Your Name have been saved');
     }
 
-public function saveNumber($id){
+public function saveNumber(){
     $this->validate([
         'phoneNumber'=> 'required|string',
      ]);
 
-     $existingUser = Phonebook::find($id);
+     $existingUser = Phonebook::find();
      Phonenumber::Create(['phone_id' => $existingUser, 'phoneNumber' => $this->phoneNumber]);
 
 // foreach ($this->phoneIds as $phoneId) {
