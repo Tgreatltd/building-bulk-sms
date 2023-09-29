@@ -64,7 +64,7 @@
         @csrf
 
         <div class="mb-4">
-            <label for="number" class="block text-gray-600 text-sm font-semibold">Number {{$phonedisplay}}</label>
+            <label for="number" class="block text-gray-600 text-sm font-semibold">Number {{$contact}}</label>
             <input wire:model="phoneNumber"  name="phoneNumber" class="form-input">
         </div>
         
