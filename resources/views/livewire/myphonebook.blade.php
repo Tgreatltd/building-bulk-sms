@@ -8,7 +8,7 @@
         @if (session()->has('success'))
         <h1>{{session()->get('success')}}</h1>
         @endif
-    <form wire:submit.prevent="save">
+    <form wire:submit.prevent="saveName">
         <div class="mb-4">
             <label for="name" class="block text-gray-600 text-sm font-semibold">Name</label>
             <input wire:model="name" type="text" id="name" name="name" class="form-input">

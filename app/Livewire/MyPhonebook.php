@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name, $data,  $users, $used, $seeId, $phoneIds, $id;
+    public $number, $name, $data,  $users, $used, $seeId, $phoneIds, $id, $phoneNumber;
 
    
 
@@ -29,15 +29,22 @@ class MyPhonebook extends Component
         session()->flash('success','Your Name have been saved');
     }
 
-public function saveNumber(){
+public function saveNumber($id){
     $this->validate([
         'phoneNumber'=> 'required|string',
      ]);
 
-foreach ($this->phoneId as $phoneId) {
-    // Find or create a user in the database with the given ID
-    Phonenumber::Create(['phone_id' => $phoneId], ['phoneNumber' => $this->phoneNumber]);
-}
+     $existingUser = Phonebook::find($id);
+     Phonenumber::Create(['phone_id' => $existingUser, 'phoneNumber' => $this->phoneNumber]);
+
+// foreach ($this->phoneIds as $phoneId) {
+//     // Find or create a user in the database with the given ID
+//     $existingUser = Phonebook::find($phoneId);
+//    if (!$existingUser) {
+//     Phonenumber::Create(['phone_id' => $existingUser, 'phoneNumber' => $this->phoneNumber]);
+//    }
+// }
+
 // $phone_id = Auth::id();
 // Phonenumber::create([
 //     'phoneNumber'=>$this->phoneNumber,
@@ -56,7 +63,7 @@ public function mount()
     {
         $userId= Auth::id();
         $users= Phonebook::where('user_id',$userId)->get();
-        return view('livewire.myphonebook', ['user'=>$users, 'id'=>$this->id]);
+        return view('livewire.myphonebook', ['user'=>$users]);
     }
 
 }
