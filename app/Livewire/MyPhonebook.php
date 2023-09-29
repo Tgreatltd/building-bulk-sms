@@ -14,7 +14,7 @@ class MyPhonebook extends Component
 
    
 
-    public function save(){
+    public function saveName(){
         $this->validate([
             'name'=> 'required|string|unique:phonebooks,name',
         ]);
