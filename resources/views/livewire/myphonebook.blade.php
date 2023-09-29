@@ -1,4 +1,4 @@
-<div class="container mx-auto mt-20 max-w-4xl mx-auto bg-black p-6 rounded shadow-md" x-data="{name:false}">
+<div class="container mx-auto mt-20 max-w-4xl mx-auto bg-black p-6 rounded shadow-md" x-data="{name:false, data:false}">
     {{-- <template x-if="open">
         
       </template> --}}
@@ -53,7 +53,37 @@
     </form>
 </div>
 
+{{-- to edit numbers --}}
 
+<div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md" x-show="data">
+    <h1 class="text-blue-500">Edit Phone Number</h1>
+    @if (session()->has('success'))
+        <h1>{{session()->get('success')}}</h1>
+    @endif
+    <form wire:submit.prevent="" action="" method="POST" class="max-w-md mx-auto">
+        @csrf
+
+        <div class="mb-4">
+            <label for="number" class="block text-gray-600 text-sm font-semibold">Number</label>
+            <input wire:model="phoneNumber"  name="phoneNumber" class="form-input" 
+            value="{{Auth::id()}}">
+        </div>
+
+        <div class="mb-4">
+            <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
+            <input disabled wire:model="id" type="text" id="id" name="id" class="form-input" 
+            value="{{Auth::user()->id}}">
+        </div>
+
+        <div class="mb-4">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
+                Save Number
+            </button>
+        </div>
+    </form>
+</div>
+
+{{-- to display the names on databas --}}
 
    <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
     <h2 class="text-2xl font-semibold mb-4">PHONEBOOK LIST</h2>
@@ -74,7 +104,7 @@
                 <td class="px-4 py-2" style="border: 2px solid black">{{$usa->user_id}}</td>
                 <td class="px-4 py-2 flex justify-center " style="border: 1px solid black">
                     <div class="mb-4">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" >
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" x-on:click="data=!data" >
                             EDIT
                         </button>
                     </div>
