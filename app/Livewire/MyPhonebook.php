@@ -10,7 +10,8 @@ use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name, $data,  $users, $id, $phoneNumber, $phonedisplay, $phone, $contact;
+    public $number, $name, $data,  $users, $ids, $phoneNumber, 
+    $phonedisplay, $phone, $contacts, $allContact;
 
    
 
@@ -71,7 +72,7 @@ public function mount()
 
 public function editContact($id){
     // $this->phonedisplay=Phonebook::all();
-    $this->contact= Phonebook::find($id);
+    $this->contacts = Phonebook::find($id);
 }
 
 
