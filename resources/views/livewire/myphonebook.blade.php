@@ -50,7 +50,7 @@
 
 
 <div class="container mx-auto p-4">
-    <form action="{{ route('save-data') }}" method="POST" class="max-w-md mx-auto">
+    <form action="" method="POST" class="max-w-md mx-auto">
         @csrf
 
         <div class="mb-4">
