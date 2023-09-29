@@ -42,7 +42,7 @@
 
         <div class="mb-4">
             <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
-            <input disabled wire:model="id" type="text" id="id" name="id" class="form-input" value="{{Auth::user()->id}}">
+            <input disabled wire:model="id" type="text" id="id" name="id" class="form-input" value="{{auth()->user()->id}}">
         </div>
 
         <div class="mb-4">
@@ -62,17 +62,19 @@
     @endif
     <form wire:submit.prevent="" action="" method="POST" class="max-w-md mx-auto">
         @csrf
+        @foreach ($phoneId as $numbers)
+            
+        @endforeach
 
         <div class="mb-4">
             <label for="number" class="block text-gray-600 text-sm font-semibold">Number</label>
-            <input wire:model="phoneNumber"  name="phoneNumber" class="form-input" 
-            value="{{Auth::id()}}">
+            <input wire:model="phoneNumber"  name="phoneNumber" class="form-input">
         </div>
 
         <div class="mb-4">
             <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
-            <input disabled wire:model="id" type="text" id="id" name="id" class="form-input" 
-            value="{{Auth::user()->id}}">
+            <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
+            value="{{Auth::id()}}">
         </div>
 
         <div class="mb-4">
@@ -117,6 +119,7 @@
             @endforeach
         </tbody>
     </table> 
+    <div>{{$phoneId['2']}}</div>
     </div>
     
     
