@@ -74,24 +74,24 @@
    </div>
 
 
-   <div class="">
+   <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
     <h2 class="text-2xl font-semibold mb-4">PHONEBOOK LIST</h2>
-    <table class="min-w-full table">
-        <thead>
-            <tr>
-                <th class="px-4 py-2">ID</th>
-                <th class="px-4 py-2">NAME</th>
-                <th class="px-4 py-2">USER_ID</th>
-                <th class="px-4 py-2">ACTION</th>
+    <table class="min-w-full table" style="border: 2px solid black">
+        <thead style="border: 2px solid black">
+            <tr style="border: 2px solid black">
+                <th class="px-4 py-2" style="border: 2px solid black" >ID</th>
+                <th class="px-4 py-2" style="border: 2px solid black">NAME</th>
+                <th class="px-4 py-2" style="border: 2px solid black">USER_ID</th>
+                <th class="px-4 py-2" style="border: 2px solid black">ACTION</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($user as $usa)
             <tr>
-                <td class="px-4 py-2">{{$usa->id}}</td>
-                <td class="px-4 py-2">{{$usa->name}}</td>
-                <td class="px-4 py-2">{{$usa->user_id}}</td>
-                <td class="px-4 py-2">
+                <td class="px-4 py-2" style="border: 2px solid black">{{$usa->id}}</td>
+                <td class="px-4 py-2" style="border: 2px solid black">{{$usa->name}}</td>
+                <td class="px-4 py-2" style="border: 2px solid black">{{$usa->user_id}}</td>
+                <td class="px-4 py-2 flex justify-center " style="border: 1px solid black">
                     <div class="mb-4">
                         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">EDIT</button>
                     </div>

@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name, $data, $user, $users, $used, $seeId;
+    public $number, $name, $data,  $users, $used, $seeId;
 
     // public function saveContact(){
         
@@ -61,8 +61,8 @@ class MyPhonebook extends Component
 
     public function render()
     {
-        $users= Phonebook::all();
-    
+        $userId= Auth::id();
+        $users= Phonebook::where('user_id',$userId)->get();
         return view('livewire.myphonebook', ['user'=>$users]);
     }
 
