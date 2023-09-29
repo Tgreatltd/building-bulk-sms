@@ -64,13 +64,25 @@
         @csrf
         
         <div class="mb-4">
-            <label for="number" class="block text-gray-600 text-sm font-semibold">Number {{$contacts->ids}}</label>
+            <label for="number" class="block text-gray-600 text-sm font-semibold">Number {{$contacts}}</label>
             <input wire:model="phoneNumber"  name="phoneNumber" class="form-input">
         </div>
+
+        
+        
         <div class="mb-4">
             <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
-            <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
-            value="">
+            
+
+            <div>
+                @if ($contacts)
+                <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
+                value="{{$contacts->id}}">
+                    <!-- Display other attributes of the Phonebook model as needed -->
+                @else
+                    <p>Contact not found</p>
+                @endif
+            </div>
         </div>
 
         <div class="mb-4">

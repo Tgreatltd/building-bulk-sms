@@ -73,6 +73,7 @@ public function mount()
 public function editContact($id){
     // $this->phonedisplay=Phonebook::all();
     $this->contacts = Phonebook::find($id);
+
 }
 
 
