@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name, $data,  $users, $used, $seeId, $phoneIds, $id, $phoneNumber;
+    public $number, $name, $data,  $users, $id, $phoneNumber, $phonedisplay, $phone;
 
    
 
@@ -34,6 +34,9 @@ public function saveNumber(){
         'phoneNumber'=> 'required|string',
      ]);
 
+    
+
+
      $existingUser = Phonebook::find();
      Phonenumber::Create(['phone_id' => $existingUser, 'phoneNumber' => $this->phoneNumber]);
 
@@ -55,8 +58,19 @@ session()->flash('success', 'Your Number have been saved successfully');
 public function mount()
 {
     // Retrieve the user IDs from the Phonebook model
-    $this->phoneIds = Phonebook::pluck('id')->toArray();
+    // $this->phoneIds = Phonebook::pluck('id')->toArray();
+
+    // Retrieve the Phonebook model by ID
+    // $phonebook = Phonebook::find($phonebookId);
+
+    // if ($phonebook) {
+    //     $this->phonebookId = $phonebook->id;
+    // }
+
+   $this->phonedisplay=Phonebook::all();
 }
+
+
 
 
     public function render()

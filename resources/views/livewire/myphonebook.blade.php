@@ -64,14 +64,15 @@
         @csrf
 
         <div class="mb-4">
-            <label for="number" class="block text-gray-600 text-sm font-semibold">Number</label>
+            <label for="number" class="block text-gray-600 text-sm font-semibold">Number {{$phonedisplay}}</label>
             <input wire:model="phoneNumber"  name="phoneNumber" class="form-input">
         </div>
+        
 
         <div class="mb-4">
             <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
             <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
-            value="{{$id}}">
+            value="">
         </div>
 
         <div class="mb-4">
@@ -103,12 +104,12 @@
                 <td class="px-4 py-2" style="border: 2px solid black">{{$usa->user_id}}</td>
                 <td class="px-4 py-2 flex justify-center " style="border: 1px solid black">
                     <div class="mb-4">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" x-on:click="data=!data" >
+                        <button wire:click="editContact" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" x-on:click="data=!data" >
                             EDIT
                         </button>
                     </div>
                     <div class="mb-4">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">DELETE</button>
+                        <button  type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">DELETE</button>
                     </div>
                 </td>
         
