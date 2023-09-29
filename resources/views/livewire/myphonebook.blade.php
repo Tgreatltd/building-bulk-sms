@@ -62,9 +62,6 @@
     @endif
     <form wire:submit.prevent="" action="" method="POST" class="max-w-md mx-auto">
         @csrf
-        @foreach ($phoneId as $numbers)
-            
-        @endforeach
 
         <div class="mb-4">
             <label for="number" class="block text-gray-600 text-sm font-semibold">Number</label>
@@ -74,7 +71,7 @@
         <div class="mb-4">
             <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
             <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
-            value="{{Auth::id()}}">
+            value="{{$phoneId['2']}}">
         </div>
 
         <div class="mb-4">

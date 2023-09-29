@@ -27,7 +27,6 @@ class MyPhonebook extends Component
             ]
         );
         session()->flash('success','Your Name have been saved');
-        $this->mount();
     }
 
 public function saveNumber(){
