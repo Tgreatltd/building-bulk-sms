@@ -1,8 +1,8 @@
 <div x-data="{name:false}">
     <template x-if="open">
-
-
-        <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
+        
+      </template>
+   <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
     <form wire:submit.prevent="save">
         <div class="mb-4">
             <label for="name" class="block text-gray-600 text-sm font-semibold">Name</label>
@@ -48,10 +48,9 @@
             @endforeach
         </tbody>
     </table> 
-      </template>
-   
+    
 
-    <div class="container mx-auto p-4" x-show="name">
+    <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md" x-show="name">
         <form action="" method="POST" class="max-w-md mx-auto">
             @csrf
     
