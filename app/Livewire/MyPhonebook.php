@@ -44,21 +44,6 @@ class MyPhonebook extends Component
 
    
 
-    //  public function mount(){
-    //     $this->user = Community::all();
-    //     $this->user=auth()->user();
-
-    //     if ($this->user) {
-    //         $this->users = Community::all();
-    //     }
-    //  }
-
-    //  public function selectUser($id){
-    //     $this->data = Community::find($id);
-       
-    //  }
-
-
     public function render()
     {
         $userId= Auth::id();
