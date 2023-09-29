@@ -1,7 +1,7 @@
-<div x-data="{name:false}">
-    <template x-if="open">
+<div class="container mx-auto mt-20 max-w-4xl mx-auto bg-black p-6 rounded shadow-md" x-data="{name:false}">
+    {{-- <template x-if="open">
         
-      </template>
+      </template> --}}
    <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
     <form wire:submit.prevent="save">
         <div class="mb-4">
@@ -16,6 +16,29 @@
         </div>
     </form>
    </div>
+
+   <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md" x-show="name">
+    <form wire:submit.prevent="saveNumber" action="" method="POST" class="max-w-md mx-auto">
+        @csrf
+
+        <div class="mb-4">
+            <label for="number" class="block text-gray-600 text-sm font-semibold">Number</label>
+            <input wire:model="number" type="number" id="number" name="number" class="form-input">
+        </div>
+
+        <div class="mb-4">
+            <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
+            <input wire:model="id" type="text" id="id" name="id" class="form-input">
+        </div>
+
+        <div class="mb-4">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
+
 
 
    <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
@@ -50,7 +73,7 @@
     </table> 
     </div>
     
-
+    
     
 
 </div>
