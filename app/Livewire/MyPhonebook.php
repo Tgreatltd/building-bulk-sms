@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Community;
 use App\Models\Phonebook;
+use App\Models\Phonenumber;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -11,22 +12,7 @@ class MyPhonebook extends Component
 {
     public $number, $name, $data,  $users, $used, $seeId;
 
-    // public function saveContact(){
-        
-    //     // dd($this->number);
-    //       $this->validate([
-    //         'number'=> 'required|string',
-    //         'name'=> 'required|string|unique:communities,name',
-    //     ]);
-    //     Community::create(
-    //         [ 
-            
-    //         'name'=>$this->name,
-    //         'number'=>$this->number,
-    //         ]
-    //     );
-
-    //  }
+   
 
     public function save(){
         $this->validate([
@@ -42,7 +28,16 @@ class MyPhonebook extends Component
         );
     }
 
-   
+public function saveContact(){
+$phonebook_id = Auth::user_id();
+$data= $this->validate([
+   'number'=> $this->number,
+]);
+Phonenumber::create([
+    $data,
+    'phonebook_id'=>$phonebook_id
+]);
+}
 
     public function render()
     {
