@@ -1,5 +1,5 @@
 <div>
-    <div>
+    <div x-data="name">
     <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
     <form wire:submit.prevent="save">
         <div class="mb-4">
