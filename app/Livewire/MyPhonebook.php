@@ -29,8 +29,8 @@ class MyPhonebook extends Component
         session()->flash('success','Your Name have been saved');
     }
 
-public function saveContact(){
-$phonebook_id = Auth::user_id();
+public function saveNumber(){
+$phonebook_id = Auth::id();
 $data= $this->validate([
    'number'=> $this->number,
 ]);
