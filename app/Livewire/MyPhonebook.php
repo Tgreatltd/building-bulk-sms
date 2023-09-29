@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name, $data,  $users, $used, $seeId;
+    public $number, $name, $data,  $users, $used, $seeId, $phoneNumber;
 
    
 
@@ -30,14 +30,15 @@ class MyPhonebook extends Component
     }
 
 public function saveNumber(){
-$phonebook_id = Auth::id();
-$data= $this->validate([
-   'number'=> 'required|string|',
+$phone_id = Auth::id();
+ $this->validate([
+   'phoneNumber'=> 'required|string',
 ]);
 Phonenumber::create([
-    $data,
-    'phonebook_id'=>$phonebook_id
+    'phoneNumber'=>$this->phoneNumber,
+    'phone_id'=>$phone_id,
 ]);
+session()->flash('success', 'Your Number have been saved successfully');
 }
 
     public function render()

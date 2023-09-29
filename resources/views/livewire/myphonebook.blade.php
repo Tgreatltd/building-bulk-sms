@@ -2,6 +2,8 @@
     {{-- <template x-if="open">
         
       </template> --}}
+
+       {{-- to add name --}}
    <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
         @if (session()->has('success'))
         <h1>{{session()->get('success')}}</h1>
@@ -15,18 +17,27 @@
             @enderror
         </div>
         <div class="mb-4">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">Save</button>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">Add PhoneBook Name</button>
         </div>
     </form>
+
+    <div class="mb-4">
+        <button x-on:click="name=!name" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">Click to Add Numbers</button>
+    </div>
    </div>
 
+   {{-- to add numbers --}}
+
    <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md" x-show="name">
+    @if (session()->has('success'))
+        <h1>{{session()->get('success')}}</h1>
+    @endif
     <form wire:submit.prevent="saveNumber" action="" method="POST" class="max-w-md mx-auto">
         @csrf
 
         <div class="mb-4">
             <label for="number" class="block text-gray-600 text-sm font-semibold">Number</label>
-            <input wire:model="number" type="number" id="number" name="number" class="form-input">
+            <input wire:model="phoneNumber"  name="phoneNumber" class="form-input">
         </div>
 
         <div class="mb-4">
@@ -36,7 +47,7 @@
 
         <div class="mb-4">
             <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
-                Save
+                Save Number
             </button>
         </div>
     </form>
@@ -63,7 +74,7 @@
                 <td class="px-4 py-2" style="border: 2px solid black">{{$usa->user_id}}</td>
                 <td class="px-4 py-2 flex justify-center " style="border: 1px solid black">
                     <div class="mb-4">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" x-on:click="name=!name">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" >
                             EDIT
                         </button>
                     </div>
