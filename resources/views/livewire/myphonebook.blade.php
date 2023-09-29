@@ -3,6 +3,9 @@
         
       </template> --}}
    <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md">
+        @if (session()->has('success'))
+        <h1>{{session()->get('success')}}</h1>
+        @endif
     <form wire:submit.prevent="save">
         <div class="mb-4">
             <label for="name" class="block text-gray-600 text-sm font-semibold">Name</label>

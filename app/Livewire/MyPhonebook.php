@@ -26,6 +26,7 @@ class MyPhonebook extends Component
             'user_id'=>$user_id,
             ]
         );
+        session()->flash('success','Your Name have been saved');
     }
 
 public function saveContact(){
