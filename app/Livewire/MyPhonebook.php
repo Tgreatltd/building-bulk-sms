@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class MyPhonebook extends Component
 {
-    public $number, $name, $data,  $users, $used, $seeId, $phoneIds;
+    public $number, $name, $data,  $users, $used, $seeId, $phoneIds, $id;
 
    
 
@@ -56,7 +56,7 @@ public function mount()
     {
         $userId= Auth::id();
         $users= Phonebook::where('user_id',$userId)->get();
-        return view('livewire.myphonebook', ['user'=>$users]);
+        return view('livewire.myphonebook', ['user'=>$users, 'id'=>$this->id]);
     }
 
 }
