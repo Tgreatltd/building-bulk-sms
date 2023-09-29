@@ -32,7 +32,7 @@ class MyPhonebook extends Component
 public function saveNumber(){
 $phonebook_id = Auth::id();
 $data= $this->validate([
-   'number'=> $this->number,
+   'number'=> 'required|string|',
 ]);
 Phonenumber::create([
     $data,
