@@ -1,6 +1,5 @@
 <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-black p-6 rounded shadow-md" x-data="{name:false, data:false}">
     {{-- <template x-if="open">
-        
       </template> --}}
 
        {{-- to add name --}}
