@@ -53,6 +53,7 @@
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
+                            {{ __('Profile') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -88,6 +89,33 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                #{{Auth::user()->wallet}}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('sendsms')" :active="request()->routeIs('sendsms')">
+                 {{ __('SendSms') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('phonebook')" :active="request()->routeIs('phonebook')">
+                 {{ __('PhoneBook') }}
+            </x-responsive-nav-link>
+        </div>
+
+        
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('sendmail')" :active="request()->routeIs('sendmail')">
+                 {{ __('SendEmail') }}
+            </x-responsive-nav-link>
+        </div>
+
+        
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
