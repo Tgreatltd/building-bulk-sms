@@ -17,7 +17,8 @@ class MyPhonebook extends Component
 
     public function saveName(){
         $this->validate([
-            'name'=> 'required|string|unique:phonebooks,name',
+            // 'name'=> 'required|string|unique:phonebooks,name',
+            'name'=> 'required|string',
         ]);
       $user_id= Auth::id();
         Phonebook::create(
