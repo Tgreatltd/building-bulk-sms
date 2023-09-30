@@ -87,7 +87,7 @@
 
         <div class="mb-4">
             <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
-                Save Numbers
+                Save Number
             </button>
         </div>
     </form>
