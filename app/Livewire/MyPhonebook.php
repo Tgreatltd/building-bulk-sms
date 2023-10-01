@@ -38,13 +38,13 @@ public function saveNumber($id){
  $this->createNumber=Phonebook::find($id);
  if ($this->createNumber) {
     $this->phonebookId=$this->createNumber->id;
-    Phonenumber::create(
-        [ 
+    // Phonenumber::create(
+    //     [ 
         
-        'phoneNumber'=>$this->phoneNumber,
-        'phone_id'=>$this->phonebookId,
-        ]
-    );
+    //     'phoneNumber'=>$this->phoneNumber,
+    //     'phone_id'=>$this->phonebookId,
+    //     ]
+    // );
  } 
  $this->phoneNumber = '';
 
