@@ -32,21 +32,21 @@ class MyPhonebook extends Component
     }
 
 public function saveNumber($id){
-    // $this->validate([
-    //     'phoneNumber'=> 'required|string',
-    //  ]);
+    $this->validate([
+        'phoneNumber'=> 'required|string',
+     ]);
  $this->createNumber=Phonebook::find($id);
-//  if ($this->createNumber) {
-//     $this->phonebookId=$this->createNumber->id;
-//     Phonenumber::create(
-//         [ 
+ if ($this->createNumber) {
+    $this->phonebookId=$this->createNumber->id;
+    Phonenumber::create(
+        [ 
         
-//         'phoneNumber'=>$this->phoneNumber,
-//         'phone_id'=>$this->phonebookId,
-//         ]
-//     );
-//  } 
-//  $this->phoneNumber = '';
+        'phoneNumber'=>$this->phoneNumber,
+        'phone_id'=>$this->phonebookId,
+        ]
+    );
+ } 
+ $this->phoneNumber = '';
 
 session()->flash('success', 'Your Number have been saved successfully');
 }
