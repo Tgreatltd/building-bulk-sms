@@ -8,6 +8,7 @@
         <h1>{{session()->get('success')}}</h1>
         @endif
     <form wire:submit.prevent="saveName">
+        @csrf
         <div class="mb-4">
             <label for="name" class="block text-gray-600 text-sm font-semibold">Name</label>
             <input wire:model="name" type="text" id="name" name="name" class="form-input">
@@ -67,7 +68,7 @@
             <label for="number" class="block text-gray-600 text-sm font-semibold">Number</label>
             <input wire:model="phoneNumber"  name="phoneNumber" class="form-input">
         </div>
-        
+
         <div class="mb-4">
             <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
             <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
