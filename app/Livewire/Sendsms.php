@@ -31,16 +31,19 @@ class Sendsms extends Component
         ]);
         
         $numbersArray = explode(',', $this->number);
-        $dumpedNumbers =[];
+        // $dumpedNumbers =[];
         
         // loop through each number and display it
+
        foreach($numbersArray as $numba){
             // $dumpedNumbers[]= $numba;
-            // dd($numbersArray);
+            dd($numbersArray, $this->sender,$this->message );
         }
+        
         // dump all the numbers at once after looping
         // dd($dumpedNumbers); 
-        dd($this->number, $this->sender, $this->message);
+
+        // dd($this->number, $this->sender, $this->message);
         // $client = new Client();
      
          $this->info='message sent successfully';
