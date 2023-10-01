@@ -128,8 +128,5 @@
     </table> 
     {{-- <div>{{$phoneId['2']}}</div> --}}
     </div>
-    
-    
-    
 
 </div>
