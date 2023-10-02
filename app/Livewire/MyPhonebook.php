@@ -46,7 +46,6 @@ public function saveNumber($id){
         ]
     );
  } 
- $this->phoneNumber = '';
 
 session()->flash('success', 'Your Number have been saved successfully');
 }
