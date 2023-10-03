@@ -37,6 +37,9 @@ class MyPhonebook extends Component
         $this->validate([
             'phoneNumber' => 'required|string',
         ]);
+        Phonenumber::create([
+            $this->editContact($id)
+        ]);
         // $this->createNumber = Phonebook::find($id);
         // if ($this->createNumber) {
         //     $this->phonebookId = $this->createNumber->id;
