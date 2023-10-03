@@ -37,17 +37,17 @@ class MyPhonebook extends Component
         $this->validate([
             'phoneNumber' => 'required|string',
         ]);
-        $this->createNumber = Phonebook::find($id);
-        if ($this->createNumber) {
-            $this->phonebookId = $this->createNumber->id;
-            Phonenumber::create(
-                [
+        // $this->createNumber = Phonebook::find($id);
+        // if ($this->createNumber) {
+        //     $this->phonebookId = $this->createNumber->id;
+        //     Phonenumber::create(
+        //         [
 
-                    'phoneNumber' => $this->phoneNumber,
-                    'phone_id' => $this->phonebookId,
-                ]
-            );
-        }
+        //             'phoneNumber' => $this->phoneNumber,
+        //             'phone_id' => $this->phonebookId,
+        //         ]
+        //     );
+        // }
 
         session()->flash('success', 'Your Number have been saved successfully');
     }
