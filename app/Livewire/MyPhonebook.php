@@ -54,9 +54,9 @@ class MyPhonebook extends Component
 
     public function editContact($id)
     {
-        $this->contacts = Phonebook::find($id);
-        if ($this->contacts) {
-            $this->ids = $this->contacts->id;
+      $allContact=  $this->contacts = Phonebook::find($id);
+        if ($allContact) {
+            $this->ids = $allContact->id;
         }
     }
 
