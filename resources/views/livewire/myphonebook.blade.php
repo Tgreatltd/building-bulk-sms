@@ -62,7 +62,8 @@
     @endif
     <form wire:submit.prevent="saveNumber" action="" method="POST" class="max-w-md mx-auto">
         @csrf
-        <h1>{{$allContact}}</h1>
+        {{-- <h1>{{$contacts}}</h1> --}}
+
         <div class="mb-4">
             {{-- <label for="number" class="block text-gray-600 text-sm font-semibold">Number {{$contacts}}</label> --}}
             <label for="number" class="block text-gray-600 text-sm font-semibold">Number</label>
