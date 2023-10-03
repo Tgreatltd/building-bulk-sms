@@ -11,7 +11,7 @@ use Livewire\Component;
 class MyPhonebook extends Component
 {
     public $number, $name, $data,  $users, $ids, $phoneNumber,
-        $phonebookId, $phone, $contacts, $allContact, $createNumber;
+        $phonebookId, $phone, $contacts, $allContact, $createNumber, $phonebook;
 
 
 
@@ -34,12 +34,23 @@ class MyPhonebook extends Component
 
     public function saveNumber($id)
     {
-        $this->validate([
+      $this->validate([
             'phoneNumber' => 'required|string',
         ]);
-        Phonenumber::create([
-            $this->editContact($id)
-        ]);
+
+        $this->phonebook=Phonebook::find($id);
+        if ($this->phonebook) {
+           Phonenumber::create([
+            'phoneNumber'=>$this->phoneNumber,
+            'phone_id'=>$this->phonebook->id
+           ]);
+        }
+        // Phonenumber::create([
+        //     'phoneNumber' => $this->phoneNumber,
+        //     'phone_id' => $this->phonebookId,
+        // ]);
+
+
         // $this->createNumber = Phonebook::find($id);
         // if ($this->createNumber) {
         //     $this->phonebookId = $this->createNumber->id;
@@ -57,7 +68,7 @@ class MyPhonebook extends Component
 
     public function editContact($id)
     {
-      $allContact=  $this->contacts = Phonebook::find($id);
+        $allContact =  $this->contacts = Phonebook::find($id);
         if ($allContact) {
             $this->ids = $allContact->id;
         }
