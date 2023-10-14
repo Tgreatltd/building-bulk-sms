@@ -11,7 +11,7 @@ use Livewire\Component;
 class MyPhonebook extends Component
 {
     public $number, $name, $data,  $users, $ids, $phoneNumber,
-        $phonebookId, $phone, $contacts, $allContact, $createNumber, $phonebook;
+        $phonebookId, $phone, $contacts, $allContact, $createNumber, $phonebook,$phone_id;
 
 
 
@@ -38,7 +38,7 @@ class MyPhonebook extends Component
             'phoneNumber' => 'required|string',
         ]);
 
-        $this->phonebook=Phonebook::find($this->phonebookId);
+        $phonebook=Phonebook::find($this->phone_id);
         if ($this->phonebook) {
            Phonenumber::create([
             'phoneNumber'=>$this->phoneNumber,
