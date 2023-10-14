@@ -14,12 +14,11 @@ class Editphonebook extends Component
     public function mount($id)
     { 
         $this->phonebookId = $id;
-        $this->phonebook = Phonebook::find($this->phonebookId);
        
     }
     public function render()
     {
-       
+        $this->phonebook = Phonebook::find($this->phonebookId);
         return view('livewire.editphonebook', [ 'phonebook' => $this->phonebook]);
     }
 }
