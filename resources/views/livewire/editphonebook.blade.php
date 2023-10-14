@@ -9,15 +9,15 @@
             @csrf <!-- Add a CSRF token field for security -->
             <div class="mb-4">
                 <label for="input1" class="block text-gray-600">ID</label>
-                <input disabled type="text" name='id' wire:model='id' value="{{$used->id}}" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400">
+                <input disabled type="text" name='id' wire:model='id' value="" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400">
             </div>
             <div class="mb-4">
                 <label  class="block text-gray-600">NAME</label>
-                <input name="name" type="text"  wire:model='name' value="{{$used->name}}" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400">
+                <input name="name" type="text"  wire:model='name' value="" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400">
             </div>
             <div class="mb-4">
                 <label for="input3" class="block text-gray-600">NUMBERS</label>
-                <input type="text" name="number"   wire:model='number' value="{{$used->number}}" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400">
+                <input type="text" name="number"   wire:model='number' value="" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400">
             </div>
             <div class="text-center">
                 <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700">Update</button>
