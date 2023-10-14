@@ -33,7 +33,8 @@ Route::get('/phonebook', function () {
 })->middleware(['auth', 'verified'])->name('phonebook');
 
 Route::get('/editContact/{id}', function ($id) {
-    return view('editphonebooks',['user'=>Phonebook::find($id)]);
+    
+    return view('editphonebooks');
 })->middleware(['auth', 'verified'])->name('editContact');
 
 
