@@ -3,16 +3,21 @@
 namespace App\Livewire;
 
 use App\Models\Community;
+use App\Models\Phonebook;
 use Livewire\Component;
 
 
 class Editphonebook extends Component
 {
- public $used, $seeId;
+    public $user;
+
+    public function mouunt($id){
+     $this->user=Phonebook::find($id);
+    }
 
     public function render()
     {
 
-        return view('livewire.editphonebook');
+        return view('livewire.editphonebook', ['user'=>$user]);
     }
 }
