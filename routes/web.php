@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Models\Community;
+use App\Models\Phonebook;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,8 +32,8 @@ Route::get('/phonebook', function () {
     return view('phonebook');
 })->middleware(['auth', 'verified'])->name('phonebook');
 
-Route::get('/editContact/{id}', function () {
-    return view('editphonebooks');
+Route::get('/editContact/{id}', function ($id) {
+    return view('editphonebooks',['user'=>Phonebook::find($id)]);
 })->middleware(['auth', 'verified'])->name('editContact');
 
 
