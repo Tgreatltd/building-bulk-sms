@@ -29,8 +29,8 @@
    {{-- to add numbers --}}
 
    <div class="container mx-auto mt-20 max-w-4xl mx-auto bg-white p-6 rounded shadow-md" x-show="name">
-    @if (session()->has('success'))
-        <h1>{{session()->get('success')}}</h1>
+    @if (session()->has('savedNumber'))
+        <h1>{{session()->get('savedNumber')}}</h1>
     @endif
     <form wire:submit.prevent="saveNumber" action="" method="POST" class="max-w-md mx-auto">
         @csrf
@@ -42,7 +42,7 @@
 
         <div class="mb-4">
             <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
-            <input disabled wire:model="phone_id" type="text" id="phone_id" name="id" class="form-input" value="{{auth()->user()->id}}">
+            <input  wire:model="phone_id" type="text" id="phone_id" name="id" class="form-input" value="{{auth()->user()->id}}">
         </div>
 
         <div class="mb-4">

@@ -42,7 +42,7 @@ class MyPhonebook extends Component
         if ($this->phonebook) {
            Phonenumber::create([
             'phoneNumber'=>$this->phoneNumber,
-            'phone_id'=>$this->phonebook->id,
+            'phone_id'=>$phonebook->id,
            ]);
         }
         // Phonenumber::create([
@@ -62,8 +62,9 @@ class MyPhonebook extends Component
         //         ]
         //     );
         // }
+        $this->reset(['phoneNumber']);
 
-        session()->flash('success', 'Your Number have been saved successfully');
+        session()->flash('savedNumber', 'Your Number have been saved successfully');
     }
 
     public function editContact($id)
