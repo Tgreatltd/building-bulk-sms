@@ -9,11 +9,12 @@ use Livewire\Component;
 
 class Editphonebook extends Component
 {
-    public $user, $id;
-//  public function mount($id){
-//     $this->user=Phonebook::find($id);
-//  }
-
+    public $phonebookId;
+    public $phonebook;
+    public function mount($id)
+    {
+        $this->phonebookId = $id;
+    }
     public function render()
     {
 
