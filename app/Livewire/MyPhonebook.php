@@ -74,8 +74,9 @@ class MyPhonebook extends Component
 
     public function render()
     {
+        $phonebook = Phonebook::with('phoneNumbers')->find($this->phone_id);
         $userId = Auth::id();
         $users = Phonebook::where('user_id', $userId)->get();
-        return view('livewire.myphonebook', ['user' => $users,]);
+        return view('livewire.myphonebook', ['user' => $users, 'phonebook'=>$phonebook]);
     }
 }

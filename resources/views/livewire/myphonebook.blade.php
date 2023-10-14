@@ -141,5 +141,11 @@
     {{-- <div>{{$phoneId['2']}}</div> --}}
     {{-- <div>{{$phoneId['2']}}</div>           --}}
     </div>
+
+    <div>
+        @foreach ($phonebook as $number)
+          <div>{{$number->phoneNumber}}</div>  
+        @endforeach
+    </div>
  
 </div>
