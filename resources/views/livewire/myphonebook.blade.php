@@ -114,9 +114,13 @@
                 <td class="px-4 py-2" style="border: 2px solid black">{{$usa->user_id}}</td>
                 <td class="px-4 py-2 flex justify-center " style="border: 1px solid black">
                     <div class="mb-4">
-                        <button wire:click="editContact({{$usa->id}})" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" x-on:click="data=!data" >
-                            EDIT
+                        <button wire:click="editContact({{$usa->id}})" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
+                         x-on:click="data=!data">EDIT
                         </button>
+                        <button wire:click="editContact({{$usa->id}})" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
+                            x-on:click="data=!data">EDIT
+                           </button>
+
                     </div>
                     <div class="mb-4">
                         <button  type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">DELETE</button>
