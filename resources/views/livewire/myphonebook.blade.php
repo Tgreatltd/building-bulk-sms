@@ -42,7 +42,7 @@
 
         <div class="mb-4">
             <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
-            <input disabled wire:model="id" type="text" id="id" name="id" class="form-input" value="{{auth()->user()->id}}">
+            <input disabled wire:model="phone_id" type="text" id="phone_id" name="id" class="form-input" value="{{auth()->user()->id}}">
         </div>
 
         <div class="mb-4">
@@ -62,7 +62,7 @@
     @endif
     <form wire:submit.prevent="saveNumber" action="" method="POST" class="max-w-md mx-auto">
         @csrf
-        {{-- <h1>{{$contacts}}</h1> --}}
+        <h1>{{$ids}}</h1>
 
         <div class="mb-4">
             {{-- <label for="number" class="block text-gray-600 text-sm font-semibold">Number {{$contacts}}</label> --}}
@@ -71,9 +71,9 @@
         </div>
 
         <div class="mb-4">
-            <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
+            {{-- <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
             <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
-            value="{{$ids}}">
+            value="{{$ids}}"> --}}
             {{-- <div>
                 @if ($contacts)
                 <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"

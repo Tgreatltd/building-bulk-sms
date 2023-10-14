@@ -32,17 +32,17 @@ class MyPhonebook extends Component
         session()->flash('success', 'Your Name have been saved');
     }
 
-    public function saveNumber($id)
+    public function saveNumber()
     {
       $this->validate([
             'phoneNumber' => 'required|string',
         ]);
 
-        $this->phonebook=Phonebook::find($id);
+        $this->phonebook=Phonebook::find($this->phonebookId);
         if ($this->phonebook) {
            Phonenumber::create([
             'phoneNumber'=>$this->phoneNumber,
-            'phone_id'=>$this->phonebook->id
+            'phone_id'=>$this->phonebook->id,
            ]);
         }
         // Phonenumber::create([
@@ -68,18 +68,20 @@ class MyPhonebook extends Component
 
     public function editContact($id)
     {
-        $this->validate([
-            'phoneNumber' => 'required|string',
-        ]);
+    
         $allContact =  $this->contacts = Phonebook::find($id);
         if ($allContact) {
             $this->ids = $allContact->id;
             
-        // Phonenumber::create([
-        //     'phoneNumber'=>$this->phoneNumber,
-        //     'phone_id'=>$this->ids,
-        // ]);
         }
+        $this->validate([
+            'phoneNumber' => 'required|string',
+        ]);
+        
+    Phonenumber::create([
+        'phoneNumber'=>$this->phoneNumber,
+        'phone_id'=>$this->ids,
+    ]); 
 
     }
 
