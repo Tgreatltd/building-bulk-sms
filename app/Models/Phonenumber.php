@@ -12,4 +12,9 @@ class Phonenumber extends Model
         'phoneNumber',
         'phone_id',
     ];
+
+    public function phonebook()
+    {
+        return $this->belongsTo(Phonebook::class, 'phone_id');
+    }
 }
