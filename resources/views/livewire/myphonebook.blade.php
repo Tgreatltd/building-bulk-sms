@@ -118,8 +118,8 @@
                          x-on:click="data=!data">EDIT
                         </button> --}}
                        
-                        <button wire:click="editContact({{$usa->id}})" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
-                            x-on:click="data=!data">EDIT
+                        <button  type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
+                           <a href=""> EDIT</a>
                            </button>
 
                     </div>
