@@ -71,9 +71,8 @@
         </div>
 
         <div class="mb-4">
-            {{-- <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
-            <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
-            value="{{$ids}}"> --}}
+            <label for="id" class="block text-gray-600 text-sm font-semibold">ID</label>
+            <input  wire:model="phone_id" type="text" id="" name="id" class="form-input">
             {{-- <div>
                 @if ($contacts)
                 <input disabled wire:model="id" type="text" id="id" name="id" class="form-input"
