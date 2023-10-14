@@ -10,7 +10,7 @@
            @if ($phonebook)
            <div class="mb-4">
             <label for="input1" class="block text-gray-600">ID</label>
-            <input disabled type="text" name='id' wire:model='phonebook.id' value="{{$phonebook->id}}" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400">
+            <input disabled type="text" name='id' wire:model='phonebookId' value="{{$phonebook->id}}" class="border rounded w-full py-2 px-3 focus:outline-none focus:border-blue-400">
         </div>
            @endif
             <div class="mb-4">
