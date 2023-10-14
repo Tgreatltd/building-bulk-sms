@@ -140,12 +140,12 @@
     </table>  
     {{-- <div>{{$phoneId['2']}}</div> --}}
     {{-- <div>{{$phoneId['2']}}</div>           --}}
-    </div>
 
     <div>
-        @foreach ($phonebook as $number)
-          <div>{{$number->phoneNumber}}</div>  
-        @endforeach
+       @if ($phonebook->phoneNumber)
+           <h1>{{$phonebook->phoneNumber}}</h1>
+       @endif
+    </div>
     </div>
  
 </div>
