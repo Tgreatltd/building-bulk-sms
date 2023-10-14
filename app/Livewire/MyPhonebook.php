@@ -41,15 +41,18 @@ class MyPhonebook extends Component
         // $phonebook=Phonebook::find($this->phone_id);
         $userId = auth()->id();
         $phonebook = Phonebook::where('user_id', $userId)->find($this->phone_id);
-         Phonenumber::create([
-            'phoneNumber'=>$this->phoneNumber,
-            'phone_id'=>$phonebook->id,
-           ]);
-    
+        if ($phonebook) {
+            Phonenumber::create([
+                'phoneNumber'=>$this->phoneNumber,
+                'phone_id'=>$phonebook->id,
+               ]);
+            session()->flash('savedNumber', 'Your Number have been saved successfully');
+        }
+     else {
+        session()->flash('id', 'id not found');
+     }
         
         // $this->reset(['phoneNumber']);
-
-        session()->flash('savedNumber', 'Your Number have been saved successfully');
     }
 
     public function editContact($id)
