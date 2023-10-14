@@ -141,11 +141,14 @@
     {{-- <div>{{$phoneId['2']}}</div> --}}
     {{-- <div>{{$phoneId['2']}}</div>           --}}
 
-    <div>
-       @if ($phonebook->phoneNumber)
-           <h1>{{$phonebook->phoneNumber}}</h1>
-       @endif
-    </div>
+    @foreach ($phonenumbers as $phonenumber)
+    <p>Name: {{ $phonenumber->phonebook->name }}</p>
+    <p>Phone Number: {{ $phonenumber->phoneNumber }}</p>
+    <p>id: {{ $phonenumber->phone_id }}</p>
+    <hr>
+@endforeach
+
+
     </div>
  
 </div>

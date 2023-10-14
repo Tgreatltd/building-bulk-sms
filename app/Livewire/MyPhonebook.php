@@ -57,11 +57,11 @@ class MyPhonebook extends Component
 
     public function editContact($id)
     {
-        $userId = auth()->id();
-        $phonebook = Phonebook::where('user_id', $userId)->find($this->phone_id);
         $this->validate([
             'phoneNumber' => 'required|string',
         ]);
+        $userId = auth()->id();
+        $phonebook = Phonebook::where('user_id', $userId)->find($this->phone_id);
 
         $phonebook=Phonebook::find($this->phone_id);
          Phonenumber::create([
@@ -72,15 +72,15 @@ class MyPhonebook extends Component
 
     }
 
-    public function mount(){
-        $this->phonebook = Phonebook::with('phoneNumbers')->find($this->phone_id);
-    }
+    // public function mount(){
+    //     $this->phonebook = Phonebook::with('phoneNumbers')->find($this->phone_id);
+    // }
 
     public function render()
     {
-    
         $userId = Auth::id();
+        $phonenumbers = Phonenumber::with('phonebook')->get();
         $users = Phonebook::where('user_id', $userId)->get();
-        return view('livewire.myphonebook', ['user' => $users]);
+        return view('livewire.myphonebook', ['user' => $users,'phonenumbers' => $phonenumbers]);
     }
 }
