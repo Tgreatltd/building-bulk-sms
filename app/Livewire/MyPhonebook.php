@@ -44,23 +44,7 @@ class MyPhonebook extends Component
             'phone_id'=>$phonebook->id,
            ]);
     
-        // Phonenumber::create([
-        //     'phoneNumber' => $this->phoneNumber,
-        //     'phone_id' => $this->phonebookId,
-        // ]);
-
-
-        // $this->createNumber = Phonebook::find($id);
-        // if ($this->createNumber) {
-        //     $this->phonebookId = $this->createNumber->id;
-        //     Phonenumber::create(
-        //         [
-
-        //             'phoneNumber' => $this->phoneNumber,
-        //             'phone_id' => $this->phonebookId,
-        //         ]
-        //     );
-        // }
+        
         $this->reset(['phoneNumber']);
 
         session()->flash('savedNumber', 'Your Number have been saved successfully');
@@ -68,20 +52,16 @@ class MyPhonebook extends Component
 
     public function editContact($id)
     {
-    
-        $allContact =  $this->contacts = Phonebook::find($id);
-        if ($allContact) {
-            $this->ids = $allContact->id;
-            
-        }
         $this->validate([
             'phoneNumber' => 'required|string',
         ]);
-        
-    Phonenumber::create([
-        'phoneNumber'=>$this->phoneNumber,
-        'phone_id'=>$this->ids,
-    ]); 
+
+        $phonebook=Phonebook::find($this->phone_id);
+         Phonenumber::create([
+            'phoneNumber'=>$this->phoneNumber,
+            'phone_id'=>$phonebook->id,
+           ]);
+       
 
     }
 
