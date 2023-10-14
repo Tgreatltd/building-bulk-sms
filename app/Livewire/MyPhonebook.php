@@ -36,7 +36,6 @@ class MyPhonebook extends Component
     {
       $this->validate([
             'phoneNumber' => 'required|string',
-            'phoneNumber' => 'required|string',
         ]);
 
         $phonebook=Phonebook::find($this->phone_id);
