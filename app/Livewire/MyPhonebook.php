@@ -68,10 +68,19 @@ class MyPhonebook extends Component
 
     public function editContact($id)
     {
+        $this->validate([
+            'phoneNumber' => 'required|string',
+        ]);
         $allContact =  $this->contacts = Phonebook::find($id);
         if ($allContact) {
             $this->ids = $allContact->id;
+            
+        // Phonenumber::create([
+        //     'phoneNumber'=>$this->phoneNumber,
+        //     'phone_id'=>$this->ids,
+        // ]);
         }
+
     }
 
     public function render()

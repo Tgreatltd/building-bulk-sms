@@ -19,7 +19,7 @@ class Editphonebook extends Component
     }
     public function render()
     {
-        $this->phonebook = Phonebook::find($this->phonebookId);
-        return view('livewire.editphonebook', [ 'phonebook' => $this->phonebook]);
+        $phonebook = Phonebook::find($this->phonebookId);
+        return view('livewire.editphonebook', [ 'phonebook' =>$phonebook]);
     }
 }
