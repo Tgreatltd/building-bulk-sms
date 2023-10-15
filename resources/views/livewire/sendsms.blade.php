@@ -4,7 +4,8 @@
     <form wire:submit.prevent="sendSms">
         <div class="mb-4">
             <label for="name" class="block text-gray-600 text-sm font-semibold">Recipient's Number</label>
-            <input type="text"  wire:model="number" class="form-input w-full p-2 border rounded">
+            {{-- <input type="text"  wire:model="number" class="form-input w-full p-2 border rounded"> --}}
+            <textarea class="w-full" wire:model="number" name="number" id="" cols="30" rows="10"></textarea>
             @error('number')
                     <small class="text-red-500">{{$message}}</small>
                 @enderror

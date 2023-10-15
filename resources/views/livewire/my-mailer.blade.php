@@ -4,7 +4,8 @@
     <form wire:submit.prevent="sendMail">
         <div class="mb-4">
             <label for="name" class="block text-gray-600 text-sm font-semibold">Recipient's Email</label>
-            <input type="text"  wire:model="email" class="form-input w-full p-2 border rounded">
+            {{-- <input type="text"  wire:model="email" class="form-input w-full p-2 border rounded"> --}}
+            <textarea wire:model="email" class="w-full" name="email" id="" cols="30" rows="10" placeholder="separate each email with comma"></textarea>
             @error('email')
                     <small class="text-red-500">{{$message}}</small>
                 @enderror
