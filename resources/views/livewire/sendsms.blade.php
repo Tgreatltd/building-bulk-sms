@@ -20,7 +20,8 @@
 
         <div class="mb-4">
             <label for="" class="block text-gray-600 text-sm font-semibold">Message</label>
-            <input wire:model="message" class="form-input w-full p-2 border rounded">
+            {{-- <input wire:model="message" class="form-input w-full p-2 border rounded"> --}}
+            <textarea wire:model="message" class="w-full form-input" name="" id="" cols="30" rows="10"></textarea>
             @error('message')
                     <small class="text-red-500">{{$message}}</small>
                 @enderror
