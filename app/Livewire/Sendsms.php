@@ -48,6 +48,7 @@ class Sendsms extends Component
         $client = new Client();
         $response=$client->post('http://www.bulksmsnigeria.com/api/v1/sms/create?api_token=t8NbaYdc5W5WGMk4MXy9mAypdgY2cJEAgRfJI8ZdiSzFY6ZdNEW1l6skgg0v
         &from='.$this->sender.'&to='.$this->number.'&body='.$this->message);
+        $result=$response
         
      
          $this->info='message sent successfully';
