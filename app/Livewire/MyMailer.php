@@ -28,6 +28,6 @@ class MyMailer extends Component
       
         dispatch(new sendEmailJob($data));
         // Mail::to('olamoyeguntimothy@gmail.com')->send(new sendEmail());
-        dd('Sent'); 
+        dd('Sent');  
     }
 }
