@@ -23,7 +23,7 @@ class MyMailer extends Component
         ]);
         $emailArray=explode(',', $this->email);
         foreach ($emailArray as $mail) {
-            $data = ['subject' => $this->subject, 'message' => $this->message, 'email' => $emailArray]; 
+            $data = ['subject' => $this->subject, 'message' => $this->message, 'email' => $mail]; 
         }
       
         dispatch(new sendEmailJob($data));
