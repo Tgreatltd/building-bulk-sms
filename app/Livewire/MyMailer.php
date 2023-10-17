@@ -15,12 +15,12 @@ class MyMailer extends Component
 
     public function sendMail()
     {
-        $this->info = '';
         $this->validate([
             'email' => 'required|string',
             'subject' => 'required|string',
             'message' => 'required|string|',
         ]);
+        $this->info = '';
         $emailArray=explode(',', $this->email);
         foreach ($emailArray as $mail) {
             $data = ['subject' => $this->subject, 'message' => $this->message, 'email' =>$mail]; 
