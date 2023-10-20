@@ -32,8 +32,8 @@ Route::get('/phonebook', function () {
     return view('phonebook');
 })->middleware(['auth', 'verified'])->name('phonebook');
 
-Route::get('/editContact/{id}', function () {
-    return view('editphonebooks');
+Route::get('editContact/{id}', function ($id) {
+    return view('editphonebooks',compact('id'));
 })->middleware(['auth', 'verified'])->name('editContact');
 
 
