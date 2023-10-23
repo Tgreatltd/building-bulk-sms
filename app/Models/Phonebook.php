@@ -14,7 +14,7 @@ class Phonebook extends Model
         'user_id',
     ];
 
-    public function phoneset()
+    public function phones()
     {
         return $this->hasMany(Phonenumber::class, 'phone_id');
     }
