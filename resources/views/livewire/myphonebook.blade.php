@@ -107,7 +107,7 @@
                 <th class="px-4 py-2" style="border: 2px solid black" >ID</th>
                 <th class="px-4 py-2" style="border: 2px solid black">NAME</th>
                 <th class="px-4 py-2" style="border: 2px solid black">USER_ID</th>
-                <th class="px-4 py-2" style="border: 2px solid black">PHONENUMBER</th>
+                {{-- <th class="px-4 py-2" style="border: 2px solid black">PHONENUMBER</th> --}}
                 <th class="px-4 py-2" style="border: 2px solid black">ACTION</th>
             </tr>
         </thead>
@@ -117,7 +117,7 @@
                 <td class="px-4 py-2" style="border: 2px solid black">{{$usa->id}}</td>
                 <td class="px-4 py-2" style="border: 2px solid black">{{$usa->name}}</td>
                 <td class="px-4 py-2" style="border: 2px solid black">{{$usa->user_id}}</td>
-                <td class="px-4 py-2" style="border: 2px solid black">{{$usa->phoneNumber}}</td>
+                {{-- <td class="px-4 py-2" style="border: 2px solid black">{{$usa->phoneNumber}}</td> --}}
                 <td class="px-4 py-2 flex justify-center " style="border: 1px solid black">
                     <div class="mb-4">
                         {{-- <button wire:click="editContact({{$usa->id}})" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
