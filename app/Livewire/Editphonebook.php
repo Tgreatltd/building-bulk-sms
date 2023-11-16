@@ -15,7 +15,7 @@ class Editphonebook extends Component
     public function mount($id)
     { 
         $this->id = $id;
-        $this->phonebookId = Phonebook::find($id); 
+        $this->phonebookId = Phonebook::find($id);
        
     }
     public function render()
